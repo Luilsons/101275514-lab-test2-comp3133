@@ -1,27 +1,35 @@
-# 101275514LabTest2Comp3133
+# Lab Test 2 – COMP3133
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Student Info
+- **Name:** Luilson Sousa
+- **Student ID:** 101275514
 
-## Development server
+## Live Demo
+🌐 [Click here to open the deployed app on Vercel](https://101275514-lab-test2-comp3133.vercel.app)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Description
+This Angular app consumes the SpaceX Launches API and displays a list of mission launches. It allows filtering missions by:
+- Launch year ✅ *(Working)*
+- Launch success ❌ *(UI present, not working)*
+- Landing success ❌ *(UI present, not working)*
 
-## Code scaffolding
+## Features
+- Angular Material UI
+- Filter by launch year (fully functional)
+- Launch and landing success filters visible (non-functional due to inconsistent API data)
+- Responsive design using Material cards and toolbar
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech Stack
+- Angular 16
+- TypeScript
+- Angular Material
+- SpaceX REST API
+- Vercel (for deployment)
 
-## Build
+## Local Development
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To run locally:
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm install
+ng serve
