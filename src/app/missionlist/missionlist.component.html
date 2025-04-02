@@ -1,0 +1,51 @@
+<mat-toolbar color="primary">
+  SpaceX Mission Launch List
+</mat-toolbar>
+
+<div style="padding: 16px;">
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Launch Year</mat-label>
+    <input matInput [(ngModel)]="filterYear" placeholder="e.g. 2008">
+  </mat-form-field>
+
+  <mat-label>Launch</mat-label>
+  <mat-radio-group [(ngModel)]="filterLaunch">
+    <mat-radio-button value="success">Successful</mat-radio-button>
+    <mat-radio-button value="failed">Failed</mat-radio-button>
+  </mat-radio-group>
+
+  <br><br>
+
+  <mat-label>Landing</mat-label>
+  <mat-radio-group [(ngModel)]="filterLanding">
+    <mat-radio-button value="success">Successful</mat-radio-button>
+    <mat-radio-button value="failed">Failed</mat-radio-button>
+  </mat-radio-group>
+
+  <br><br>
+
+  <button mat-raised-button color="primary" (click)="applyFilters()">Filter</button>
+  <button mat-button (click)="resetFilters()">Reset Filters</button>
+</div>
+
+<div style="padding: 16px;">
+  <mat-card *ngFor="let mission of filteredMissions" style="margin-bottom: 16px;">
+    <mat-card-header>
+      <img mat-card-avatar [src]="mission.links.mission_patch_small" alt="Patch" />
+      <mat-card-title>{{ mission.mission_name }} ({{ mission.launch_year }})</mat-card-title>
+      <mat-card-subtitle>
+        {{ mission.rocket.rocket_name }} - {{ mission.rocket.rocket_type }}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{ mission.details }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <a mat-button color="accent" [href]="mission.links.article_link" target="_blank">Article</a>
+      <a mat-button color="accent" [href]="mission.links.wikipedia" target="_blank">Wikipedia</a>
+      <a mat-button color="accent" [href]="mission.links.video_link" target="_blank">Video</a>
+    </mat-card-actions>
+  </mat-card>
+</div>
